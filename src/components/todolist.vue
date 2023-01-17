@@ -8,7 +8,7 @@
             <ul class="valuelist">
                 <li v-for="(value, index) in values" :key="index" class="valuebox" >
                     <div class="box">
-                        <input type="checkbox">
+                        <input @click="crossedOut(index)" type="checkbox">
                         <span class="span">
                             {{ value }}
                         </span>
@@ -41,8 +41,13 @@
                     this.newvalue = ""
                 }
             },
-            delItem: function (kulcs) {
-                this.values.splice((kulcs), 1)
+            delItem: function (item) {
+                this.values.splice((item), 1)
+            },
+            crossedOut: function () {
+                this.values.filter(value => {
+                    console.log(value, 1)
+                })
             }
         }    
     }
