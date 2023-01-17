@@ -1,11 +1,20 @@
 <template>
   <header></header>
   <main>
-      <todolist />  
+    <todolist />
   </main>
   <footer></footer>
+  
 </template>
 
-<script setup>
+<script>
 import todolist from './components/todolist.vue'
+import css from './assets/css/style.css'
+
+export default {
+  name: 'App',
+  components: {
+    todolist
+  }
+}
 </script>
